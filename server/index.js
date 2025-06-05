@@ -8,7 +8,9 @@ const { verifyToken } = require('./middleware/auth');
 require('dotenv').config();
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: 'https://hospital-frontend-5ehf.onrender.com'
+}));
 app.use(helmet());
 app.use(morgan('dev'));
 app.use(express.json());
